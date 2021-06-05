@@ -22,13 +22,21 @@ class Calculator(object): # object 는 객체의미
 
     @staticmethod
     def main():
-        calc = Calculator(6, 2)
-        print('*'*30)
-        print(f'{calc.firstNumber} + {calc.secondNumber} = {calc.add()}')
-        print(f'{calc.firstNumber} - {calc.secondNumber} = {calc.sub()}')
-        print(f'{calc.firstNumber} * {calc.secondNumber} = {calc.mul()}')
-        print(f'{calc.firstNumber} / {calc.secondNumber} = {calc.div()}')
-        print('*' * 30)
-
+        while 1:
+            menu = input('0-종료 1-계산기\n')
+            if menu == '0':
+                break
+            elif menu == '1':
+                firstNum = int(input('첫번째 수'))
+                secondNum = int(input('두번째 수'))
+                calc = Calculator(firstNum, secondNum)
+                print('*'*30)
+                print(f'{calc.firstNumber} + {calc.secondNumber} = {calc.add()}')
+                print(f'{calc.firstNumber} - {calc.secondNumber} = {calc.sub()}')
+                print(f'{calc.firstNumber} * {calc.secondNumber} = {calc.mul()}')
+                print(f'{calc.firstNumber} / {calc.secondNumber} = {calc.div()}')
+                print('*' * 30)
+            else:
+                print("잘못된 메뉴선택입니다")
 if __name__ == '__main__':
     Calculator.main()
